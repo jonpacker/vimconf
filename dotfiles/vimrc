@@ -29,11 +29,30 @@ map <Leader>o o<Esc>ko
 map <C-j> k$J
 map <C-a> ggVG
 
+map <Leader>f :Flisttoggle<Enter>
+
+fu! SetIndentStyle(width, soft)
+  let width=a:width * 1
+	if a:soft == "true"
+		set expandtab
+		execute 'set shiftwidth='.width
+		execute 'set softtabstop='.width
+	else
+		set noexpandtab
+		set nosofttabstop
+		execute 'set tabstop='.width
+		execute 'set shiftwidth='.width
+	endif
+endfunction
+
+com! -nargs=* Istyle call SetIndentStyle(<f-args>)
+
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
 colorscheme vividchalk
 
 map <Leader>t :FuzzyFinderTextMate<Enter>
+map <Leader>b :FufBuffer<Enter>
 map <Leader>r :FuzzyFinderRenewCache<Enter>
 
 call pathogen#infect()

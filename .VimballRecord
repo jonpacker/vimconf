@@ -1,0 +1,2 @@
+ic.vba: call delete('/home/jp/.vim/autoload/IndentConsistencyCop.vim')|call delete('/home/jp/.vim/plugin/IndentConsistencyCop.vim')|call delete('/home/jp/.vim/doc/IndentConsistencyCop.txt')
+ica.vba: call delete('/home/jp/.vim/plugin/IndentConsistencyCopAutoCmds.vim')|call delete('/home/jp/.vim/doc/IndentConsistencyCopAutoCmds.txt')
