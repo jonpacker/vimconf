@@ -1,0 +1,39 @@
+syntax enable
+filetype plugin indent on
+
+set tabstop=2
+set shiftwidth=2
+set colorcolumn=81
+
+runtime macros/matchit.vim
+
+set showcmd
+set showmode
+
+set backspace=indent,eol,start
+
+set hidden
+
+set wildmenu
+set wildmode=list:longest
+
+set ignorecase
+set smartcase
+
+set number
+set ruler
+
+map <S-Enter> O<Esc>
+map <CR> o<Esc>
+map <Leader>o o<Esc>ko
+map <C-j> k$J
+map <C-a> ggVG
+
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
+colorscheme vividchalk
+
+map <Leader>t :FuzzyFinderTextMate<Enter>
+map <Leader>r :FuzzyFinderRenewCache<Enter>
+
+call pathogen#infect()
