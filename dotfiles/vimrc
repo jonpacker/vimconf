@@ -31,6 +31,7 @@ map <C-a> ggVG
 
 map <Leader>f :Flisttoggle<Enter>
 
+" Indent Style Function
 fu! SetIndentStyle(width, soft)
   let width=a:width * 1
 	if a:soft == "true"
@@ -51,8 +52,11 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 
 colorscheme vividchalk
 
-map <Leader>t :FuzzyFinderTextMate<Enter>
+" FuzzyFinder Settings
+map <Leader>t :FufCoverageFile<Enter>
 map <Leader>b :FufBuffer<Enter>
-map <Leader>r :FuzzyFinderRenewCache<Enter>
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po]|pyc)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|.*/tiny_mce.?/.*|.*template_c.*|node_modules'
+let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])|node_modules'
+let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po]|pyc)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|.*/tiny_mce.?/.*|.*template_c.*|node_modules'
 
 call pathogen#infect()
