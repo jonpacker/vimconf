@@ -48,7 +48,13 @@ endfunction
 
 com! -nargs=* Istyle call SetIndentStyle(<f-args>)
 
-autocmd BufNewFile,BufRead *.json set ft=javascript
+fu! MapFT(extension, language)
+	execute 'autocmd BufNewFile,BufRead *.'.a:extension.' set ft='.a:language
+endfunction
+
+call MapFT('json', 'javascript')
+call MapFT('master', 'html')
+call MapFT('config', 'xml')
 
 colorscheme vividchalk
 
@@ -59,7 +65,7 @@ let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po]|pyc)$|(^|[/\\])\.(h
 let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])|node_modules'
 let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po]|pyc)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|.*/tiny_mce.?/.*|.*template_c.*|node_modules'
 
-autocmd vimenter * NERDTree
+map <Leader>e :NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 call pathogen#infect()
