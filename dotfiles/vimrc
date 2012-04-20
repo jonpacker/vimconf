@@ -40,21 +40,29 @@ fu! SetIndentStyle(width, soft)
 		execute 'set softtabstop='.width
 	else
 		set noexpandtab
-		set nosofttabstop
 		execute 'set tabstop='.width
 		execute 'set shiftwidth='.width
 	endif
 endfunction
 
 com! -nargs=* Istyle call SetIndentStyle(<f-args>)
+call SetIndentStyle(2, 'true')
+
+fu! WhenFileIs(type, command)
+	execute 'autocmd BufNewFile,BufRead *.'.a:type.' '.a:command
+endfunction
 
 fu! MapFT(extension, language)
-	execute 'autocmd BufNewFile,BufRead *.'.a:extension.' set ft='.a:language
+	call WhenFileIs(a:extension, 'set ft='.a:language)
 endfunction
 
 call MapFT('json', 'javascript')
 call MapFT('master', 'html')
 call MapFT('config', 'xml')
+call MapFT('vb', 'vbnet')
+call MapFT('aspx', 'html')
+
+call WhenFileIs('styl', 'setlocal nosmartindent')
 
 colorscheme vividchalk
 
