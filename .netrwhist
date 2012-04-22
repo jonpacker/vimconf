@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/jp/dev/win/brik-cms/Website/Templates/Light'
 let g:netrw_dirhist_2='/home/jp/dev/avc'
 let g:netrw_dirhist_3='/home/jp/dev/win/brik'
+let g:netrw_dirhist_4='/Users/jonpacker/Development/Projects/visitorexp'
+let g:netrw_dirhist_5='/Users/jonpacker/Development/Projects/visitorexp/public'
+let g:netrw_dirhist_6='/Users/jonpacker/Development/Projects/visitorexp'
+let g:netrw_dirhist_7='/Users/jonpacker/Development/Projects/visitorexp/routes'
