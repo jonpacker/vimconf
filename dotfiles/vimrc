@@ -64,7 +64,7 @@ call MapFT('aspx', 'html')
 
 call WhenFileIs('styl', 'setlocal nosmartindent')
 
-colorscheme vividchalk
+colorscheme Tomorrow-Night
 
 " FuzzyFinder Settings
 map <Leader>t :FufCoverageFile<Enter>
