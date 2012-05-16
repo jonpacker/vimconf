@@ -1,3 +1,4 @@
+set t_Co=256
 syntax enable
 filetype plugin indent on
 
@@ -64,8 +65,6 @@ call MapFT('aspx', 'html')
 
 call WhenFileIs('styl', 'setlocal nosmartindent')
 
-colorscheme Tomorrow-Night
-
 " FuzzyFinder Settings
 map <Leader>t :FufCoverageFile<Enter>
 map <Leader>b :FufBuffer<Enter>
@@ -77,3 +76,5 @@ map <Leader>e :NERDTree<Enter>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 call pathogen#infect()
+
+colors jellybeans
